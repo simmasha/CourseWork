@@ -1,45 +1,53 @@
-import telebot
-from telebot import types
+#import telebot
+from aiogram import Bot, Dispatcher, executor, types
 
-bot = telebot.TeleBot('6025564381:AAE0nNtkoOrNBNstPQFexvEVdyh_U9kNlsA')
+bot = Bot('6025564381:AAE0nNtkoOrNBNstPQFexvEVdyh_U9kNlsA')
+dp = Dispatcher(bot)
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    bot.send_message(message.chat.id, f'Привет, {message.from_user.first_name}!\nДля начала предлагаю настроить бота для твоего удобства')
+
+@dp.message_handler(commands=['start'])
+async def start(message): #(message: types.message)
+    await bot.send_sticker(message.from_user.id, sticker='CAACAgQAAxkBAAEIuJFkR6hI7xeNZE6F0DZix_p7geY8IAACawADzjkIDVlm6mN2kkvQLwQ')
+    await message.answer(f'Привет, {message.from_user.first_name}!🙌\nДля начала предлагаю настроить бота для твоего удобства')
     markup = types.InlineKeyboardMarkup()
     btn1 = types.InlineKeyboardButton('Кино', callback_data='cinema')
     btn2 = types.InlineKeyboardButton('Театр', callback_data='theatre')
     btn3 = types.InlineKeyboardButton('Концерты', callback_data='concert')
     btn4 = types.InlineKeyboardButton('Выставки', callback_data='exhibition')
-    btn5 = types.InlineKeyboardButton('Дальше', callback_data='next')
+    btn5 = types.InlineKeyboardButton('Дальше➡️', callback_data='next')
     markup.row(btn1, btn2)
     markup.row(btn3, btn4)
     markup.row(btn5)
-    bot.send_message(message.chat.id, 'Выбери категории, которые тебя интересуют', reply_markup=markup)
+    await message.answer('Выбери категории, которые тебя интересуют', reply_markup=markup)
 
-@bot.callback_query_handler(func=lambda callback:True)
-def callback_message(callback):
+@dp.callback_query_handler()
+async def callback_message(callback):
     if callback.data == 'next':
-        bot.delete_message(callback.message.chat.id, callback.message.message_id)
+        await callback.message.delete()
         markup = types.InlineKeyboardMarkup()
-        btn1 = types.InlineKeyboardButton('Подписаться на еженедельную рассылку', callback_data='followweek')
-        btn2 = types.InlineKeyboardButton('Уведомлять о новых событиях', callback_data='follownew')
-        btn3 = types.InlineKeyboardButton('Завершить настройку', callback_data='finish')
-        markup.add(btn1)
-        markup.add(btn2)
-        markup.add(btn3)
-        bot.send_message(callback.message.chat.id, 'Какие уведомления ты хочешь получать?\n'
-                                                   'У нас есть рассылка мероприятий на неделю по понедельникам, '
-                                                   'а также уведомления о новых мероприятиях в выбранных тобой категориях.'
-                                                   '\nМожно выбрать обе рассылки', reply_markup=markup)
-    elif callback.data == 'finish': bot.send_message(callback.message.chat.id, 'Настройка окончена!')
+        btn6 = types.InlineKeyboardButton('Подписаться на еженедельную рассылку', callback_data='followweek')
+        btn7 = types.InlineKeyboardButton('Уведомлять о новых событиях', callback_data='follownew')
+        btn8 = types.InlineKeyboardButton('Завершить настройку🏁', callback_data='finish')
+        markup.add(btn6)
+        markup.add(btn7)
+        markup.add(btn8)
+        await callback.message.answer('Какие уведомления ты хочешь получать?\n'
+                                      'У нас есть рассылка мероприятий на неделю по понедельникам, '
+                                      'а также уведомления о новых мероприятиях в выбранных тобой категориях.'
+                                      '\nМожно выбрать обе рассылки', reply_markup=markup)
+    elif callback.data == 'finish':
+        #await bot.delete_message(callback.message.chat.id, callback.message.message_id)
+        await callback.message.delete()
+        await callback.message.answer('Настройка окончена!')
 
 
-@bot.message_handler(commands=['info'])
-def info(message):
-    bot.send_message(message.chat.id, 'EventsNN - это бот для поиска мероприятий в Нижнем Новгороде. '
+@dp.message_handler(commands=['info'])
+async def info(message):
+    await message.answer('EventsNN - это бот для поиска мероприятий в Нижнем Новгороде. '
                                      'С помощью него вы с легкостью найдете мероприятие на свой вкус.\n')
 
+@dp.message_handler(commands=['events'])
+async def events(message):
+    pass
 
-bot.polling(none_stop=True)
-
+executor.start_polling(dp)
