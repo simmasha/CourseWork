@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from transliterate import translit
 import pandas as pd
 
 URLS = dict(CINEMA="https://afisha.yandex.ru/nizhny-novgorod/selections/cinema-today",
@@ -50,3 +51,6 @@ def Parsing():
             json.dump(events, file, indent=4, ensure_ascii=False)
 
     return events
+
+def idGeneration(name: str, date: str, city = "NN") -> str:
+    return "-".join("-".join(date.split("."), ) + city + translit(name, language_code="ru", reversed=True))
