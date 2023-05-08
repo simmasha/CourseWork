@@ -35,8 +35,8 @@ btn_excursion = types.InlineKeyboardButton('Экскурсии', callback_data='
 btn_musical = types.InlineKeyboardButton('Мюзиклы', callback_data='MUSICAL')
 btn_mclass = types.InlineKeyboardButton('Мастер-классы', callback_data='MASTERCLASS')
 
-datas = Parsing()
-Writing(datas)
+Parsing()
+Writing()
 
 ########################################################################################################################
 

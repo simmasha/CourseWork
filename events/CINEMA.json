@@ -1,74 +1,86 @@
 {
-    "Вызов": [
-        "сегодня 5 мая",
+    "ID": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+    ],
+    "titles": [
+        "Вызов",
+        "Юра дворник",
+        "Помилование",
+        "Банды Парижа",
+        "Астрал. Семейный обряд",
+        "Джон Уик 4",
+        "Синистер. Начало",
+        "Не дыши: Игра на выживание",
+        "Возрождённые",
+        "Банк Дэйва",
+        "Три мушкетёра: Д’Артаньян",
+        "Третий не лишний"
+    ],
+    "place": [
         "в 17 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/vyzov-2023?source=rubric",
-        "https://avatars.mds.yandex.net/get-afishanew/31447/f544f186c83695c48f7505d7884245d5/s380x220"
-    ],
-    "Юра дворник": [
-        "сегодня 5 мая",
         "в 14 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/iura-dvornik?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/23114/9b420dd2-a039-49db-94cb-61e66bbb8aea/s380x220"
-    ],
-    "Кунг-фу жеребец": [
-        "сегодня 5 мая",
-        "в 12 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/geroi-dnia-2023?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/21626/e61fde18-75da-436e-bcbe-4099305509f4/s380x220"
-    ],
-    "Помилование": [
-        "сегодня 5 мая",
         "в 11 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/pomilovaniye?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/31447/325ccca6-b47d-4b44-98ef-bdfa88b9e090/s380x220"
-    ],
-    "Все страхи Бо": [
-        "сегодня 5 мая",
         "в 9 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/vse-strakhi-bo?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/23114/726e7c83-9e0a-4b68-8b12-be017a03979c/s380x220"
-    ],
-    "Астрал. Семейный обряд": [
-        "сегодня 5 мая",
         "в 7 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/astral-semeyniy-obryad?source=rubric",
-        "https://avatars.mds.yandex.net/get-afishanew/21626/cb68ca6e8c79aed39735872aed13e4ab/s380x220"
-    ],
-    "Банды Парижа": [
-        "сегодня 5 мая",
-        "в 9 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/apachi-bandy-parizha-2022?source=rubric",
-        "https://avatars.mds.yandex.net/get-afishanew/28638/9e8b6516283319912b7ada513df4c86e/s380x220"
-    ],
-    "Миссия «НЛО»": [
-        "сегодня 5 мая",
-        "в 6 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/missiya-nlo?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/31447/567ff157-df1d-4ad2-82d4-e4cf211ea547/s380x220"
-    ],
-    "Синистер. Начало": [
-        "сегодня 5 мая",
-        "в 6 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/sinister-nachalo?source=rubric",
-        "https://avatars.mds.yandex.net/get-afishanew/29022/ad6f082de686adfb2790aee79ec3d999/s380x220"
-    ],
-    "Джон Уик 4": [
-        "сегодня 5 мая",
         "в 4 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/john-wick-chapter-4?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/23114/9d5a9da9-2b03-4a03-9067-571c98e5e8f7/s380x220"
-    ],
-    "Возрождённые": [
-        "сегодня 5 мая",
-        "в 4 кинотеатрах",
-        "https://afisha.yandex.ru/nizhny-novgorod/cinema/vozrozhdennyye?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/31447/545323c7-2bcf-43a3-a96b-c462e9c37e26/s380x220"
-    ],
-    "Не дыши: Игра на выживание": [
-        "сегодня 5 мая",
+        "в 6 кинотеатрах",
         "в 2 кинотеатрах",
+        "в 4 кинотеатрах",
+        "Романов Синема",
+        "в 2 кинотеатрах",
+        "в 2 кинотеатрах"
+    ],
+    "time": [
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая",
+        "сегодня 5 мая"
+    ],
+    "img": [
+        "https://avatars.mds.yandex.net/get-afishanew/31447/f544f186c83695c48f7505d7884245d5/s380x220",
+        "https://avatars.mds.yandex.net:443/get-afishanew/23114/9b420dd2-a039-49db-94cb-61e66bbb8aea/s380x220",
+        "https://avatars.mds.yandex.net:443/get-afishanew/31447/325ccca6-b47d-4b44-98ef-bdfa88b9e090/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/28638/9e8b6516283319912b7ada513df4c86e/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/21626/cb68ca6e8c79aed39735872aed13e4ab/s380x220",
+        "https://avatars.mds.yandex.net:443/get-afishanew/23114/9d5a9da9-2b03-4a03-9067-571c98e5e8f7/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/29022/ad6f082de686adfb2790aee79ec3d999/s380x220",
+        "https://avatars.mds.yandex.net:443/get-afishanew/28638/21422cf6-7486-4b4e-be1a-6d7694a2fa99/s380x220",
+        "https://avatars.mds.yandex.net:443/get-afishanew/31447/545323c7-2bcf-43a3-a96b-c462e9c37e26/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/23114/48dbefc8bead870569bddeab1e886fca/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/31447/29c99ac1d36b153eb05f88980b26e66f/s380x220",
+        "https://avatars.mds.yandex.net/get-afishanew/23114/ced830e874ceafc8f93f2d4ea6e65552/s380x220"
+    ],
+    "href": [
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/vyzov-2023?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/iura-dvornik?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/pomilovaniye?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/apachi-bandy-parizha-2022?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/astral-semeyniy-obryad?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/john-wick-chapter-4?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/sinister-nachalo?source=rubric",
         "https://afisha.yandex.ru/nizhny-novgorod/cinema/ne-dyshi-igra-na-vyzhivaniye?source=rubric",
-        "https://avatars.mds.yandex.net:443/get-afishanew/28638/21422cf6-7486-4b4e-be1a-6d7694a2fa99/s380x220"
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/vozrozhdennyye?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/bank-deyva?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/tri-mushketera-dartanyan?source=rubric",
+        "https://afisha.yandex.ru/nizhny-novgorod/cinema/tretiy-ne-lishniy?source=rubric"
     ]
 }

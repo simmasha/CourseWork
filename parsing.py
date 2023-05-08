@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
+import os.path
 
 URLS = dict(CINEMA="https://afisha.yandex.ru/nizhny-novgorod/selections/cinema-today",
             CONCERT="https://afisha.yandex.ru/nizhny-novgorod/selections/concert-hot",
@@ -21,32 +24,35 @@ headers = {
 }
 
 def Parsing():
-    df = None
+    ID = 0
+    events = {'ID': [], 'titles': [], 'place': [], 'time': [], 'img': [], 'href': []}
     for URL in URLS:
         req = requests.get(URLS.get(URL), headers=headers)
         src = req.text
         soup = BeautifulSoup(src, 'lxml')
 
-        events = {}
         titles = soup.find_all(attrs={"data-component": "EventCard__EventInfo__Title"})
         details = soup.find_all(attrs={"data-component": "EventCard__EventInfo__Details"})
         hrefs = soup.find_all(attrs={"data-testid": "event-card-link"})
         imgs = soup.find_all(attrs={"data-component": "EventCard__Cover"})
         for i in range(len(hrefs)):
-            title = titles[i].text
-
-            events[title] = []
-            events[title].append(details[i].find('li').text)
-            if details[i].find('li').find_next_sibling(): events[title].append(details[i].find('li').find_next_sibling().text)
-            else: events[title].append(None)
-            events[title].append('https://afisha.yandex.ru' + hrefs[i].get("href"))
+            events['ID'].append(ID)
+            events['titles'].append(titles[i].text)
+            events['time'].append(details[i].find('li').text)
+            place = details[i].find('li').find_next_sibling()
+            if place: events['place'].append(details[i].find('li').find_next_sibling().text)
+            else: events['place'].append(None)
+            events['href'].append('https://afisha.yandex.ru' + hrefs[i].get("href"))
             img = imgs[i].find('img')
             if img:
                 img_href = img.get('src')
-                events[title].append(img_href)
-            else: events[title].append(None)
+                events['img'].append(img_href)
+            else: events['img'].append(None)
+            ID += 1
 
         with open(f"events/{URL}.json", "w") as file:
             json.dump(events, file, indent=4, ensure_ascii=False)
 
-    return events
+        df = pd.DataFrame(events)
+        table = pa.Table.from_pandas(df)
+        pq.write_table(table, 'events_file.parquet')
