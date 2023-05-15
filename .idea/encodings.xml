@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/auxiliary_functions.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/categories_with_href" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/events.json" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/events/CINEMA.json" charset="windows-1251" />
@@ -8,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/file.parquet" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/jsons/categories_ipcoming_events.json" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/jsons/categories_with_href.json" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/keyboards.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test.db" charset="windows-1251" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
