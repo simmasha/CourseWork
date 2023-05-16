@@ -1,6 +1,20 @@
-from config import *
+import parsing
+from keyboards import *
+from auxiliary_functions import *
 
-bot = Bot(token=TOKEN)
+import duckdb
+import random
+from dotenv import load_dotenv
+import os
+
+from aiogram.dispatcher import FSMContext
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.dispatcher.filters.state import StatesGroup, State
+from aiogram import Bot, Dispatcher, executor, types, filters
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
+
+load_dotenv()
+bot = Bot(os.getenv('TOKEN'))
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
@@ -423,7 +437,7 @@ async def select_followweek(callback: CallbackQuery, state: FSMContext):
 
 @dp.callback_query_handler(filters.Text('followweek_NO'), state=UserState.FOLOWWEEK)
 async def followweek_no(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer('Настройка окончена!')
+    await callback.message.answer('Настройка окончена!\nТы можешь просмотреть доступные команды в меню или по команде /help')
     await state.update_data(FOLLOWWEEK=False)
     await UserState.WAIT.set()
     await callback.answer()
