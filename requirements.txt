@@ -1,2 +1,2 @@
-aiogram>3
+aiogram>3.0
 duckdb==0.8.0
